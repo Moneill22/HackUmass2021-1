@@ -1,0 +1,72 @@
+.graphic1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    left: 75%;
+    transform: translateX(-50%) scale(1.3) rotate(10deg);
+    height: 50%;
+  }
+  .graphic1 div {
+    position: absolute;
+  }
+  .head{
+    background: snow;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    box-shadow: 0 0 0 30px #ffc60a,
+      0 0 0 60px #FE5F55,
+      0 0 0 90px #0A2463;
+  }
+  .eye{
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    background: snow;
+    box-shadow: 0 -7px 0 0 #1F271B;
+    top: 30px;
+  }
+  .eye:nth-child(1) {
+    left: 20px;
+  }
+  .eye:nth-child(2) {
+    right: 20px;
+  }
+  .mouth {
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    width: 50%;
+    height: 30%;
+    background:  #1F271B;
+    border-radius: 0 0 50px 50px
+  }
+  
+  
+  .paper {
+    width: 90px;
+    height: 100px;
+    background: snow;
+    border-radius: 3px;
+    transform: translate(100%, 60%) rotate(30deg);
+    box-shadow: 0px 0px 40px 0 #FF0B;
+  }
+  .paper > div {
+    background: #1F271B;
+    width: 90%;
+    height: 2%;
+    position: relative;
+    margin: 5%
+  }
+  .paper > .start {
+    width: 30%;
+  }
+  .paper > .start2 {
+    width: 20%;
+    margin-bottom: 10%;
+  }
+  .paper > .end {
+    width: 60%;
+  }
+  

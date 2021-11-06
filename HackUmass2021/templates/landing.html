@@ -1,0 +1,73 @@
+{% extends 'template.html' %}
+
+{% load static %}
+
+{% block head %}
+<link rel="stylesheet" href="{% static 'landing.css' %}">
+<link rel="stylesheet" href="{% static './graphic css/graphic1.css' %}">
+<link rel="stylesheet" href="{% static './graphic css/graphic2.css' %}">
+<link rel="stylesheet" href="{% static './graphic css/graphic3.css' %}">
+<link rel="stylesheet" href="{% static './graphic css/graphic4.css' %}">
+{% endblock %}
+    
+{% block body %}
+<section class="section1">
+    <h1>Let us help you find the right job for this point in your journey</h1>
+    <div class="graphic1">
+        <div class="head">
+            <div class="eye"></div>
+            <div class="eye"></div>
+            <div class="mouth"></div>
+        </div>
+        <div class="paper">
+            <div class="start"></div>
+            <div class="start2"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="end"></div>
+        </div>
+    </div>
+</section>
+<section class="section2">
+    <h1 class="A">We're here to help</h1>
+    <div class="B">
+        <h4>See where others succeeded</h4>
+        <div class="axes">
+            <div class="point g"></div>
+            <div class="point g"></div>
+            <div class="point r"></div>
+            <div class="point r"></div>
+        </div> 
+    </div>
+    <div class="C">
+        <h4>Apply jobs suitable to you</h4>
+        <div class="paper paperg3">
+            <div class="start"></div>
+            <div class="start2"></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div class="end"></div>
+        </div>
+    </div>
+    <div class="D">
+        <h4>Help the next generation</h4>
+        <img class="graphic4" width="150px"; src="{% static 'assets/handshake.svg' %}"></img>
+    </div>
+</section>
+{% endblock %}
