@@ -7,9 +7,8 @@ from django.db.models.fields.related import ForeignKey
 class User(models.Model):
 	username = models.CharField(max_length=50)
 	GPA = models.DecimalField(decimal_places = 3, max_digits = 10)
-	NUMBER_OF_INTERNSHIPS = models.IntegerField()
-	DEGREE = models.BooleanField(default = False)
-	college = models.TextField(blank = True, null = True)
+	MONTHS_INTERNING = models.IntegerField(default = 0)
+	college = models.CharField(blank = True, null = True)
 
 	
 class Application(models.Model):
