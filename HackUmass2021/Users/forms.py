@@ -7,8 +7,7 @@ class UserForm(forms.ModelForm):
 		fields = [
 			'username',
 			'GPA',
-			'NUMBER_OF_INTERNSHIPS',
-			'DEGREE',
+			'MONTHS_INTERNING',
 			'college',
 		]
 
