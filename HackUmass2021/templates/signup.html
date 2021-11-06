@@ -11,14 +11,17 @@
 </head>
 <body>
     <div class="left">
-        <h1>Let's get you started</h1>
-        <label for="name">Name</label>
-        <input name="name" type="text">
-        <label for="email">Email Address</label>
-        <input name="email" type="text">
-        <label for="password">Password</label>
-        <input name="password" type="text">
-        <input type="button" class="signup" value="Sign up">
+        <form action="." method = "POST">
+            {% csrf_token %}
+            <h1>Let's get you started</h1>
+            <label for="name">Name</label>
+            <input id="name" type="text">
+            <label for="email">Email Address</label>
+            <input id="email" type="text">
+            <label for="password">Password</label>
+            <input id="password" type="text">
+            <input type="submit" class="signup" value="Sign up">
+        </form>
     </div>
     <div class="right">
         <div class="bubbles"></div>
