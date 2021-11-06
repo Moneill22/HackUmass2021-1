@@ -18,7 +18,6 @@ class User(models.Model):
 class Application(models.Model):
 
 	user = models.ForeignKey(User, on_delete = models.CASCADE)
-
 	company = models.IntegerField()
 	response = models.IntegerField()
 	

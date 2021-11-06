@@ -16,16 +16,3 @@ def User_profile_view(request):
 		'form': form
 	}
 	return render(request, "create.html", context)
-
-def User_apps_view(request):
-	form = AppsForm(request.POST or None)
-
-	if form.is_valid():
-		form.save()
-		form = UserForm()
-
-	context = {
-		
-		'form': form
-	}
-	return render(request, "create.html", context)

@@ -1,0 +1,45 @@
+.axes .point {
+    position: absolute;
+  }
+  .axes {
+    width: 100px;
+    height: 100px;
+    background: transparent;
+    border-left: 4px solid #000;
+    border-bottom: 4px solid #000;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .point {
+    width:10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  .point.g {
+    background: green;
+  }
+  .point.r {
+    background: red;
+  }
+  .point:nth-child(1) {
+    transform: translate(80px, 35px);
+  }
+  .point:nth-child(2) {
+    transform: translate(60px, 15px);
+  }
+  .point:nth-child(3) {
+    transform: translate(28px, 55px);
+  }
+  .point:nth-child(4) {
+    transform: translate(10px, 80px);
+  }
+
+  /* 
+<div class="axes">
+  <div class="point g"></div>
+  <div class="point g"></div>
+  <div class="point r"></div>
+  <div class="point r"></div>
+</div> 
+*/

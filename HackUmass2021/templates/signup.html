@@ -1,0 +1,27 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'signup.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <div class="left">
+        <h1>Let's get you started</h1>
+        <label for="name">Name</label>
+        <input name="name" type="text">
+        <label for="email">Email Address</label>
+        <input name="email" type="text">
+        <label for="password">Password</label>
+        <input name="password" type="text">
+        <input type="button" class="signup" value="Sign up">
+    </div>
+    <div class="right">
+        <div class="bubbles"></div>
+    </div>
+</body>
+</html>
