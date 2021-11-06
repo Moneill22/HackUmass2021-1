@@ -10,7 +10,7 @@ body {
     height: 100vh;
     display: grid;
     grid-template-areas: "A A B B";
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 a {
     color: #1F271B;

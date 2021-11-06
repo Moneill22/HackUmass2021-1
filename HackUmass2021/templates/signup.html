@@ -8,48 +8,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'signup.css' %}" />
     <title>Document</title>
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-          let eValid = false;
-          let pValid = false;
-          let email = document.getElementsByName("email")[0];
-          let password = document.getElementsByName("password")[0];
-          let submit = document.getElementsByClassName("signup")[0];
-          email.addEventListener('input', () => {
-              eValid = validateEmail(email.value);
-              console.log(eValid);
-              updateSubmit();
-          });
-          password.addEventListener('input', () => {
-              pValid = validatePassword(password.value);
-              console.log(pValid);
-              updateSubmit();
-          });
-          function updateSubmit() {
-              submit.disabled = !(eValid && pValid);
-          }
-      });
-      function validateEmail(email) {
-          const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-          return re.test(String(email).toLowerCase());
-      }
-      function validatePassword(pass) {
-          const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;
-          return re.test(String(pass));
-      }
-    </script>
   </head>
   <body>
     <div class="left">
       <form action="." method="POST">
         {% csrf_token %}
         <h1>Let's get you started</h1>
-        <label for="name">Name</label>
-        <input id="name" type="text" />
-        <label for="email">Email Address</label>
-        <input id="email" type="text" />
-        <label for="password">Password</label>
-        <input id="password" type="text" />
+        {{ form }}
         <input type="submit" class="signup" value="Sign up" disabled/>
       </form>
       <a href="/signin">Already have an account?</a>
