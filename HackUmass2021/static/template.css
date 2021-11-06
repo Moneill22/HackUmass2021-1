@@ -28,6 +28,7 @@ a {
     color: snow;
     position: fixed;
     width: 100%;
+    z-index: 100;
 }
 #navbar > .logo {
     font-family: 'Abril Fatface', cursive;
