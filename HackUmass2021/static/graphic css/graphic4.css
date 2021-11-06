@@ -1,0 +1,6 @@
+.graphic4 {
+    /* width: 150px;  */
+    position: absolute; 
+    left: 50%; 
+    transform: translate(-50%, -35%);
+}

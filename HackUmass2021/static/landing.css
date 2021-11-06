@@ -1,0 +1,56 @@
+
+section {
+    width: 100%;
+}
+.section1 {
+    height: 100vh;
+    background: #ffc60a;
+    color: snow;
+    display: flex;
+    align-items: center;
+}
+.section1 > h1 {
+    width: 50%;
+    padding-right: 10%;
+    padding-left: 8%;
+    font-size: 60px;
+}
+
+.section2 {
+    background: snow;
+    width: 100%;
+    height: 60vh;
+    display: grid;
+    grid-template-areas: "A A A" "B C D" "B C D";
+    text-align: center;
+}
+.A {
+    grid-area: A;
+    
+}
+.B {
+    grid-area: B;
+}
+.C {
+    grid-area: C;
+}
+.D {
+    grid-area: D;
+}
+
+.section2 > h1 {
+    width: 100%;
+    font-size: 50px;
+    margin: 50px 0 0 0 ;
+    height: 100px;
+}
+.section2 > div {
+    position: relative;
+}
+.section2 > div > h4 {
+    font-size: 30px;
+    position: absolute;
+    width: 100%;
+    bottom: 15%;
+    margin: 0;
+}

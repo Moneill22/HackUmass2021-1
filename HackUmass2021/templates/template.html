@@ -1,0 +1,31 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="{% static 'template.css' %}" rel="stylesheet">
+    {% block head %}
+    {% endblock %}
+</head>
+<body>
+    <nav id="navbar">
+        <a href="#" class="logo">PATHWAYS</a>
+        <a href="#" class="nav-link">Home</a>
+        <a href="#" class="nav-link">My Account</a>
+        <input type="text" placeholder="Search for your next job" class="search"></input>
+    </nav>
+    {% block body %}
+    {% endblock %}
+    <footer id="footer">
+        <div class="socials">
+            <a href="#" class="fa fa-facebook"></a>
+            <a href="#" class="fa fa-linkedin"></a>
+            <a href="#" class="fa fa-twitter"></a>
+        </div>
+    </footer>
+</body>
+</html>
