@@ -3,39 +3,12 @@
 {% load static %}
 
 {% block head %}
-<link href="results.css" rel="stylesheet">
-<link href="dashboard.css" rel="stylesheet">
+    <link href="results.css" rel="stylesheet">
 {% endblock %}
 
-
-{% block body %}  
-<div class="container">
-    <h1 class="greeting">Hi Miguel</h1>
-    <div class="layout">
-        <div class="block A applications">
-            <h1>My Applications</h1>
-            <hr>
-            <div class="job">
-                <h1 class="company">Amazon</h1>
-                <p class="title">Web Designer</p>
-                <img src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png">
-            </div>
-            <hr>
-            <div class="job">
-                <h1 class="company">Amazon</h1>
-                <p class="title">Web Designer</p>
-                <img src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png">
-            </div>
-            <hr>
-            <div class="job">
-                <h1 class="company">Amazon</h1>
-                <p class="title">Web Designer</p>
-                <img src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png">
-            </div>
-            <hr>
-            <div class="job etc">...</div>
-        </div>
-        <div class="block B suggestions">
+{% block body %}
+    <div class="container">
+        <div class="block">
             <h1>Jobs to look into</h1>
             <hr>
             <div class="job">
@@ -56,12 +29,17 @@
                 <img src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png">
             </div>
             <hr>
-            <div class="job etc">...</div>
-        </div>
-        <div class="block C search">
-            <h1>Find your next job: </h1>
-            <input type="text" class="searchbar">
+            <div class="job">
+                <h1 class="company">Amazon</h1>
+                <p class="title">Web Designer</p>
+                <img src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png">
+            </div>
+            <hr>
+            <div class="job">
+                <h1 class="company">Amazon</h1>
+                <p class="title">Web Designer</p>
+                <img src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png">
+            </div>
         </div>
     </div>
-</div>
 {% endblock %}

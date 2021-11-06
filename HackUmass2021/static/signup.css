@@ -10,6 +10,14 @@ body {
     height: 100vh;
     display: grid;
     grid-template-areas: "A A B B";
+    overflow: hidden;
+}
+a {
+    color: #1F271B;
+    opacity: 80%;
+}
+a:hover {
+    opacity: 100%;
 }
 .left {
     grid-area: A;
@@ -58,6 +66,7 @@ body {
 .right {
     grid-area: B;
     background: #ffc60a;
+    height: 100%;
     overflow: hidden;
     position: relative;
 }
@@ -74,4 +83,27 @@ body {
         0 -13vh 0 2vw #0A2463,
         0 -45vh 0 9vw #0A2463,
         0 -136vh 0 30vw #0A2463;
+}
+.right > .bubbles2 {
+    width: 10vw;
+    height: 10vw;
+    background: #0A2463;
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    box-shadow: 
+        9vw 20vh 0 0 #0A2463,
+        18vw 0 0 0 #0A2463,
+        27vw 20vh 0 0 #0A2463,
+        36vw 0 0 0 #0A2463,
+        0 40vh 0 0 #0A2463,
+        9vw 60vh 0 0 #0A2463,
+        18vw 40vh 0 0 #0A2463,
+        27vw 60vh 0 0 #0A2463,
+        36vw 40vh 0 0 #0A2463,
+        0 80vh 0 0 #0A2463,
+        9vw 100vh 0 0 #0A2463,
+        18vw 80vh 0 0 #0A2463,
+        27vw 100vh 0 0 #0A2463,
+        36vw 80vh 0 0 #0A2463;
 }

@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 section {
     width: 100%;
 }
@@ -53,4 +53,43 @@ section {
     width: 100%;
     bottom: 15%;
     margin: 0;
+}
+
+.section3 {
+    background: #0A2463;
+    color: white;
+    width: 100%;
+    /* padding: 20px; */
+    height: 85vh;
+    position: relative;
+}
+.section3 > .desc {
+    /* display: inline-block; */
+    width: 60%;
+    padding: 5% 5%;
+    margin-top: 40px;
+    font-size: 30px;
+}
+.section3 > button {
+    background: #ffc60a;
+    font-family: 'Bebas Neue', cursive;
+    color: snow;
+    border: none;
+    font-size: 100px;
+    outline: none;
+    padding: 20px 60px;
+    border-radius: 10vw;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10vh;
+    transition: all .5s;
+    box-shadow: 0px 0px 0 0 #0005;
+}
+.section3 > button::after {
+    content: ' ➤';
+}
+.section3 > button:hover {
+    transform: translateX(-50%) translate(-5px, -5px);
+    box-shadow: 10px 10px 0 0 #0005;
 }

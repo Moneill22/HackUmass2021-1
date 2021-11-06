@@ -1,26 +1,13 @@
-hr {
-    margin: 0;
-}
 
-.container {
-    background: #F6F1F1;
-    padding: 10vh 15vw;
-}
 .greeting {
     font-size: 60px;
-    margin: 10px;
+    margin: 10px 30px;
 }
 .layout {
     display: grid;
-    grid-template-areas: "A A A A B B B B B";
+    grid-template-areas: "A A A A B B B B B" "C C C C C C C C C";
     gap: 20px;
     margin-top: 20px;
-}
-.layout > .block {
-    background: snow;
-    border-radius: 20px;
-    padding: 0 5%;
-    box-shadow: 5px 5px 0 0 #1F271B22;
 }
 .layout > .block.A {
     grid-area: A;
@@ -28,31 +15,22 @@ hr {
 .layout > .block.B {
     grid-area: B;
 }
-.layout > .block > h1 {
+.layout > .block.C {
+    grid-area: C;
+}
+.layout > .search > h1{
+    display: inline-block;
+}
+.layout > .search > .searchbar {
+    outline: none;
+    border: none;
+    border-bottom: 2px solid #1F271B;
+    display: inline-block;
     font-size: 40px;
-}
-.job {
-    position: relative;
-    padding: 10px;
-    background: snow;
-}
-.job:hover {
-    background: #FCF7F7;
-}
-.job > .company {
-    font-size: 24px;
-    text-align: right;
-}
-.job > .title {
-    font-size: 18px;
-    text-align: right;
-}
-.job > img {
-    width: 100px;
-    height: 100px;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    font-weight: 600;
+    width: 35vw;
+    background: transparent;
+    padding-left: 1px;
 }
 .job.etc {
     font-size: 20px;
