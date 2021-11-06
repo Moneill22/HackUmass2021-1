@@ -60,13 +60,17 @@ section {
     color: white;
     width: 100%;
     /* padding: 20px; */
-    height: 85vh;
+    height: 100vh;
     position: relative;
+}
+.section3 > h1 {
+    font-size: 50px;
+    padding: 5vw 0 0 5vw;
 }
 .section3 > .desc {
     /* display: inline-block; */
     width: 60%;
-    padding: 5% 5%;
+    padding: 0% 5%;
     margin-top: 40px;
     font-size: 30px;
 }
@@ -82,7 +86,7 @@ section {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: 10vh;
+    bottom: 13vh;
     transition: all .5s;
     box-shadow: 0px 0px 0 0 #0005;
 }
