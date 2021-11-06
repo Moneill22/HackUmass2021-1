@@ -9,14 +9,13 @@ class UserForm(forms.ModelForm):
 			'NUMBER_OF_INTERNSHIPS',
 			'DEGREE',
 			'college',
-			'apps'
 		]
 
 class AppsForm(forms.ModelForm):
 	class Meta:
 		model = Application
 		fields = [
-			'user'
-			'company'
+			'user',
+			'company',
 			'response'
 		]
