@@ -1,11 +1,11 @@
 from django.shortcuts import render
 from .models import User
-from .forms import ProductForm
+from .forms import UserForm
 
 # Create your views here.
 
 
-def User_create_view(request):
+def User_profile_view(request):
 	form = UserForm(request.POST or None)
 
 	if form.is_valid():
@@ -15,4 +15,17 @@ def User_create_view(request):
 	context = {
 		'form': form
 	}
-	return render(request, "user/create.html", context)
+	return render(request, "create.html", context)
+
+def User_apps_view(request):
+	form = AppsForm(request.POST or None)
+
+	if form.is_valid():
+		form.save()
+		form = UserForm()
+
+	context = {
+		
+		'form': form
+	}
+	return render(request, "create.html", context)
