@@ -5,6 +5,7 @@ class UserForm(forms.ModelForm):
 	class Meta:
 		model = User
 		fields = [
+			'username',
 			'GPA',
 			'NUMBER_OF_INTERNSHIPS',
 			'DEGREE',
