@@ -5,6 +5,7 @@ from django.db.models.fields.related import ForeignKey
 # Create your models here.
 
 class User(models.Model):
+	username = models.CharField(max_length=50)
 	GPA = models.DecimalField(decimal_places = 3, max_digits = 10)
 	NUMBER_OF_INTERNSHIPS = models.IntegerField()
 	DEGREE = models.BooleanField(default = False)
