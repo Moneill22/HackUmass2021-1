@@ -15,7 +15,13 @@ class Company(models.Model):
     name = models.CharField(max_length=40, unique=True)
     info = models.CharField(max_length=1000)
 
+    def __str__(self):
+        return self.name
+
 class Graph(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    company_id = models.CharField(unique=True)
+    company_id = models.CharField(max_length=50 ,unique=True, default='')
     users = models.ManyToManyField(User)
+
+    def __str__(self) -> str:
+        return self.company_id
