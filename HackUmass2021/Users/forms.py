@@ -8,7 +8,7 @@ class UserForm(forms.ModelForm):
 			'GPA',
 			'NUMBER_OF_INTERNSHIPS',
 			'DEGREE',
-			'college'
+			'college',
 		]
 
 class AppsForm(forms.ModelForm):
