@@ -20,7 +20,7 @@ class Company(models.Model):
 
 class Graph(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    company_id = models.CharField(max_length=50 ,unique=True, default='')
+    company_id = models.CharField(max_length=40 ,unique=True, default='')
     users = models.ManyToManyField(User)
 
     def __str__(self) -> str:

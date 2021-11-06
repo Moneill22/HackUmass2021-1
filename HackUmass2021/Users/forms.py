@@ -16,6 +16,6 @@ class AppsForm(forms.ModelForm):
 		model = Application
 		fields = [
 			'user',
-			'company',
+			'company_id',
 			'response'
 		]

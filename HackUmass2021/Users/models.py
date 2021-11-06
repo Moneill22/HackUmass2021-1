@@ -4,7 +4,6 @@ from django.db.models.fields.related import ForeignKey
 
 # Create your models here.
 
-
 class User(models.Model):
 	GPA = models.DecimalField(decimal_places = 3, max_digits = 10)
 	NUMBER_OF_INTERNSHIPS = models.IntegerField()
@@ -12,13 +11,8 @@ class User(models.Model):
 	college = models.TextField(blank = True, null = True)
 
 	
-
-
-	
 class Application(models.Model):
-
 	user = models.ForeignKey(User, on_delete = models.CASCADE)
-	company = models.IntegerField()
+	company_id = models.CharField(max_length=40 ,unique=True, default='') # company name
 	response = models.IntegerField()
-	
 	
