@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
     var color = d3
       .scaleOrdinal()
       .domain([true, false])
-      .range(["00FF00", "#FF0000"]);
+      .range(["#00FF00", "#FF0000"]);
 
     // Add dots
     svg
