@@ -108,21 +108,21 @@
       {% if apps.0 is not None %}
       <div class="job">
         <h1 class="company">{{ apps.0.company_id }}</h1>
-        <p class="title">{{ apps.0.response }}</p>
+        <p class="title">{% if apps.0.response %} Accepted {% else %} Rejected {% endif %}</p>
       </div>
       <hr />
       {% endif %}
       {% if apps.1 is not None%}
       <div class="job">
         <h1 class="company">{{ apps.1.company_id }}</h1>
-        <p class="title">{{ apps.1.response }}</p>
+        <p class="title">{% if apps.1.response %} Accepted {% else %} Rejected {% endif %}</p>
       </div>
       <hr />
       {% endif %}
       {% if apps.2 is not None%}
       <div class="job">
         <h1 class="company">{{ apps.2.company_id }}</h1>
-        <p class="title">{{ apps.2.response }}</p>
+        <p class="title">{% if apps.2.response %} Accepted {% else %} Rejected {% endif %}</p>
       </div>
       <hr />
       <div class="job etc">...</div>
