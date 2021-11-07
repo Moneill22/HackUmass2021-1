@@ -103,21 +103,27 @@
         <input class="save" type="submit" value="Save" />
       </form>
       <hr style="display: none" />
+      {% if apps[0] %}
       <div class="job">
         <h1 class="company">{{ apps[0].company_id }}</h1>
         <p class="title">{{ apps[0].response }}</p>
       </div>
       <hr />
+      {% endif %}
+      {% if apps[1] %}
       <div class="job">
         <h1 class="company">{{ apps[1].company_id }}</h1>
         <p class="title">{{ apps[1].response }}</p>
       </div>
       <hr />
+      {% endif %}
+      {% if apps[2] %}
       <div class="job">
         <h1 class="company">{{ apps[2].company_id }}</h1>
         <p class="title">{{ apps[2].response }}</p>
       </div>
       <hr />
+      {% endif %}
       <div class="job etc">...</div>
     </div>
     <div class="block C search">
