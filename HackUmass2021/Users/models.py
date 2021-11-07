@@ -15,7 +15,7 @@ class User(models.Model):
 	
 class Application(models.Model):
 	user = models.ForeignKey(User, on_delete = models.CASCADE)
-	company_id = models.CharField(max_length=40 ,unique=True, default='') # company name
+	company_id = models.CharField(max_length=40 , default='') # company name
 	response = models.BooleanField(default = False)
 
 	def __str__(self) -> str:

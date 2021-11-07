@@ -3,7 +3,7 @@ from django.shortcuts import render
 from .forms import CompanyForm
 from Users.models import User, Application
 from .models import Company, Graph
-from django.utils import simplejson
+import json
 
 # Create your views here.
 def Company_create_view(request):
@@ -30,7 +30,7 @@ def company_profile_view(request, name):
     
 def d3_api_view(request, name):
     info = get_graph_info2(name)
-    output = simplejson.dumps(info)
+    output = json.dumps(info)
     return HttpResponse(output, content_type='application/json')
 
 #Helper Functions
@@ -66,6 +66,7 @@ def get_graph_info2(company_id):
         users = graph.users.all()
         info = []
         for user in users:
+            print(user)
             app = Application.objects.get(user=user)
             point = {
                 "GPA" : user.GPA,
