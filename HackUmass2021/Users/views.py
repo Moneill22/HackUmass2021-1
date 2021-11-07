@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from companies.views import add_user_to_graph
-from .models import User
+from .models import User, Application
+from companies.models import Company
 from .forms import UserForm
 
 # Create your views here.
@@ -20,7 +21,7 @@ def User_profile_view(request):
 
 def App_creation_view(request):
 	
-	if requestion.method == 'POST':
+	if request.method == 'POST':
 		company_id = request.POST['company_id']
 		response = request.POST['response']
 		try:
@@ -65,3 +66,19 @@ def Response_Int(response):
 		return 2 #ghosted
 	else:
 		return 3 #pending
+
+def create_user_profile(request):
+	if request.method == 'POST' and request.user != None:
+		gpa = request.POST['GPA']
+		intern_time = request.POST['MONTHS_INTERNING']
+		college = request.POST['college']
+		user_profile = User(username=request.user.username, GPA=gpa, MONTHS_INTERNING=intern_time, college=college)
+		user_profile.save()
+		
+def update_user_profile(request):
+	if request.method == 'PATCH' and request.user != None:
+		user_profile = User.objects.get(username = request.user.username)
+		user_profile.GPA = request.POST['GPA']
+		user_profile.MONTHS_INTERNING = request.POST['MONTHS_INTERNING']
+		user_profile.college = request.POST['college']
+		user_profile.save(update_fields=['GPA', 'MONTHS_INTERNING', 'college'])
