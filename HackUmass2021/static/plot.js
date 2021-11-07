@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Color scale: give me a specie name, I return a color
     var color = d3
       .scaleOrdinal()
-      .domain(["true", "false"])
+      .domain([true, false])
       .range(["00FF00", "#FF0000"]);
 
     // Add dots
