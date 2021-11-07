@@ -38,11 +38,14 @@
     color: #555;
     margin-bottom: -2px;
 }
+.about {
+    white-space: nowrap;
+}
 .about > input, .application > input {
     outline: none;
     border: none;
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 20px;
     color: black;
     transition: all 1s;
 }
