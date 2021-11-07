@@ -38,7 +38,7 @@
 </script>
 {% endblock %} {% block body %}
 <div class="container">
-  <h1 class="greeting">Hi Miguel</h1>
+  <h1 class="greeting">Hi {{ user.username }}</h1>
   <div class="layout">
     <div class="block A applications">
       <h1>About me <i class="fa fa-pencil edit"></i></h1>
@@ -107,21 +107,21 @@
       {% if apps is not None %}
       {% if apps.0 is not None %}
       <div class="job">
-        <h1 class="company">{{ apps.0.company_id }}</h1>
+        <h1 class="company"><a href="../company/{{ apps.0.company_id }}">{{ apps.0.company_id }}</a></h1>
         <p class="title">{% if apps.0.response %} Accepted {% else %} Rejected {% endif %}</p>
       </div>
       <hr />
       {% endif %}
       {% if apps.1 is not None%}
       <div class="job">
-        <h1 class="company">{{ apps.1.company_id }}</h1>
+        <h1 class="company"><a href="../company/{{ apps.1.company_id }}">{{ apps.1.company_id }}</a></h1>
         <p class="title">{% if apps.1.response %} Accepted {% else %} Rejected {% endif %}</p>
       </div>
       <hr />
       {% endif %}
       {% if apps.2 is not None%}
       <div class="job">
-        <h1 class="company">{{ apps.2.company_id }}</h1>
+        <h1 class="company"><a href="../company/{{ apps.2.company_id }}">{{ apps.2.company_id }}</a></h1>
         <p class="title">{% if apps.2.response %} Accepted {% else %} Rejected {% endif %}</p>
       </div>
       <hr />
