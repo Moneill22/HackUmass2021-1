@@ -16,13 +16,12 @@
         <a href="#" class="logo">PATHWAYS</a>
         {% if user.is_authenticated %} 
         <a href="#" class="nav-link">Home</a>
-        <a href="#" class="nav-link">My Account</a>
         <a href="{% url 'logout' %}" class="nav-link">Logout</a>
-        {% else %}
-        <a href='#' class="nav-link">Sign up</a>
-        <a href='#' class="nav-link">Login</a>
-        {% endif %}
         <input type="text" placeholder="Search for your next job" class="search"></input>
+        {% else %}
+        <a href="{% url 'signup' %}" class="nav-link">Sign up</a>
+        <a href="{% url 'login' %}" class="nav-link">Login</a>
+        {% endif %}
     </nav>
     {% block body %}
     {% endblock %}
