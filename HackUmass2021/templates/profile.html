@@ -50,14 +50,14 @@
       >
         {% csrf_token%}
         <label for="name">Name:</label>
-        <input name="name" id="name" type="text" value="Miguel" disabled />
+        <input name="name" id="name" type="text" value="{{ user.username }}" disabled />
         <br />
         <label for="education">Education:</label>
         <input
           name="education"
           id="education"
           type="text"
-          value="UMass Amherst"
+          value="{{ user.college }}"
           disabled
         />
         <br />
@@ -69,7 +69,7 @@
           max="4"
           step="0.01"
           type="number"
-          value="3.91"
+          value="{{ user.GPA }}"
           disabled
         />
         <br />
@@ -80,7 +80,7 @@
           min="0"
           step="1"
           type="number"
-          value="6"
+          value="{{ user.MONTHS_INTERNING }}"
           disabled
         />
         <br />
@@ -104,27 +104,18 @@
       </form>
       <hr style="display: none" />
       <div class="job">
-        <h1 class="company">Amazon</h1>
-        <p class="title">Web Designer</p>
-        <img
-          src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png"
-        />
+        <h1 class="company">{{ apps[0].company_id }}</h1>
+        <p class="title">{{ apps[0].response }}</p>
       </div>
       <hr />
       <div class="job">
-        <h1 class="company">Amazon</h1>
-        <p class="title">Web Designer</p>
-        <img
-          src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png"
-        />
+        <h1 class="company">{{ apps[1].company_id }}</h1>
+        <p class="title">{{ apps[1].response }}</p>
       </div>
       <hr />
       <div class="job">
-        <h1 class="company">Amazon</h1>
-        <p class="title">Web Designer</p>
-        <img
-          src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png"
-        />
+        <h1 class="company">{{ apps[2].company_id }}</h1>
+        <p class="title">{{ apps[2].response }}</p>
       </div>
       <hr />
       <div class="job etc">...</div>
