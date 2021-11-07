@@ -9,7 +9,7 @@ class User(models.Model):
 	GPA = models.DecimalField(decimal_places = 3, max_digits = 10)
 	MONTHS_INTERNING = models.IntegerField(default = 0)
 	college = models.CharField(blank = True, null = True)
-
+	
 	
 class Application(models.Model):
 	user = models.ForeignKey(User, on_delete = models.CASCADE)
