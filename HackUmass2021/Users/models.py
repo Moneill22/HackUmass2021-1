@@ -6,9 +6,9 @@ from django.db.models.fields.related import ForeignKey
 
 class User(models.Model):
 	username = models.CharField(max_length=50)
-	GPA = models.DecimalField(decimal_places = 3, max_digits = 10)
+	GPA = models.DecimalField(decimal_places = 3, max_digits = 10, default='')
 	MONTHS_INTERNING = models.IntegerField(default = 0)
-	college = models.CharField(max_length=50 ,blank = True, null = True)
+	college = models.CharField(max_length=50 ,blank = True, null = True, default='')
 	
 	
 class Application(models.Model):

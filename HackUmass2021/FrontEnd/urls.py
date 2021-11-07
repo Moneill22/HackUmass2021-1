@@ -5,5 +5,5 @@ urlpatterns = [
     path('', views.index),
     # path('signup', views.signup),
     # path('signin', views.signin),
-    # path('dashboard', views.dashboard, name='dashboard')
+    path('dashboard/<str:username>', views.dashboard, name='dashboard')
 ]

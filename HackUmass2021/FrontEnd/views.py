@@ -2,12 +2,13 @@ from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from Users.models import User, Application
 from companies.models import Company
+from Users.views import init_user_profile, update_user_profile
 
 # Create your views here.
 
 def index(request):
     # if request.user != None:
-    #     return HttpResponseRedirect(reversed("dashboard"))    
+    #     return HttpResponseRedirect(f'dashboard/{request.user.username}')    
     return render(request, 'landing.html')
 
 # def signup(request):
@@ -16,13 +17,11 @@ def index(request):
 # def signin(request):
 #     return render(request, 'signin.html')
 
-def account_page(request):
-    pass
-
-def dashboard(request):
+def dashboard(request, username):
     # at most 3 most recent applications, at most 3 company recommendations
     NUM_APPS = 3
-    profile = User.objects.get(username=request.user.username)
+    init_user_profile(username)
+    profile = User.objects.get(username=username)
     applications = Application.objects.filter(user=profile)
     
     app_context = {}
@@ -37,3 +36,5 @@ def dashboard(request):
     context = app_context # TODO add company recs
     return render(request, 'dashboard.html', context)
 
+def update_dashboard(request, username):
+    pass

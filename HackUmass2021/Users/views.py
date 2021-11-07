@@ -75,7 +75,10 @@ def create_user_profile(request):
 		college = request.POST['college']
 		user_profile = User(username=request.user.username, GPA=gpa, MONTHS_INTERNING=intern_time, college=college)
 		user_profile.save()
-		
+def init_user_profile(username):
+		user_profile = User(username=username)
+		user_profile.save()
+
 def update_user_profile(request):
 	if request.method == 'PATCH' and request.user != None:
 		user_profile = User.objects.get(username = request.user.username)
