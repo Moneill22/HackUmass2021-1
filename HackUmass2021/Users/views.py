@@ -1,3 +1,4 @@
+from django.http.response import HttpResponseRedirect
 from django.shortcuts import render
 from companies.views import add_user_to_graph
 from .models import User, Application
@@ -19,32 +20,25 @@ def User_profile_view(request):
 	}
 	return render(request, "create.html", context)
 
-def App_creation_view(request):
+def App_creation_view(request, username):
 	
 	if request.method == 'POST':
-		company_id = request.POST['company_id']
-		response = request.POST['response']
+		company_id = request.POST.get('company_id')
+		response = request.POST.get('response')
+		response = True if response == 'on' else False
 		try:
 			company = Company.objects.get(name=company_id) # throws error if it does not exist
-			user = User.objects.get(username=request.user.username)
+			user = User.objects.get(username=username)
 			app = Application(user=user, company_id=company_id, response = response)
 			app.save()
-			add_user_to_graph(request.user.username, company_id)
+			add_user_to_graph(username, company_id)
 		except:
-			return 0
-		
-
-		context = {
-			'user': User.objects.get(username=request.user.username),
-			'company_id': request.POST['company_id'],
-			'response': response
-		}
-
-	return render(request, "app_create.html", context)
+			return HttpResponseRedirect(f'../dashboard/{username}')
+	return HttpResponseRedirect(f'../dashboard/{username}')
 
 def App_update_view(request):
 
-	if request.method == 'PATCH':
+	if request.method == 'POST':
 
 		app = Application.objects.get(User.get(username = request.user.username))
 		app.response = request.POST['response']

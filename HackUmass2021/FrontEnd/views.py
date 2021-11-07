@@ -41,6 +41,6 @@ def update_dashboard(request, username):
 	    user_profile = User.objects.get(username = username)
 	    user_profile.GPA = request.POST.get('gpa', '')
 	    user_profile.MONTHS_INTERNING = request.POST.get('internship-months', '')
-	    user_profile.college = request.POST.get('college', '')
+	    user_profile.college = request.POST.get('education', '')
 	    user_profile.save(update_fields=['GPA', 'MONTHS_INTERNING', 'college'])
     return HttpResponseRedirect(f'../dashboard/{username}')

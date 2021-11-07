@@ -92,14 +92,15 @@
       <hr />
       <form
         method="POST"
-        action="."
+        action="/make_app/{{user.username}}"
         class="application"
         style="height: 0px; opacity: 0"
       >
+        {% csrf_token%}
         <label for="name">Company Name:</label>
-        <input name="name" id="name" type="text" />
+        <input name="company_id" id="name" type="text" />
         <label for="name">Accepted?</label>
-        <input name="name" id="name" type="checkbox" />
+        <input name="response" id="name" type="checkbox" />
         <input class="save" type="submit" value="Save" />
       </form>
       <hr style="display: none" />
