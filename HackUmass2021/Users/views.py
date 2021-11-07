@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from companies.views import add_user_to_graph
-from .models import User
+from .models import User, Application
+from companies.models import Company
 from .forms import UserForm
 
 # Create your views here.
@@ -20,7 +21,7 @@ def User_profile_view(request):
 
 def App_creation_view(request):
 	
-	if requestion.method == 'POST':
+	if request.method == 'POST':
 		company_id = request.POST['company_id']
 		response = request.POST['response']
 		try:
@@ -35,7 +36,7 @@ def App_creation_view(request):
 		context = {
 			'user': User.objects.get(username=request.user.username),
 			'company_id': request.POST['company_id'],
-			'response': response)
+			'response': response
 		}
 
 	return render(request, "app_create.html", context)
