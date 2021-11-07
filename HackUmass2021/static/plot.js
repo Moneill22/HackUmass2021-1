@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    var companyName = document.getElementById('company-name').innerHTML;
+
     // set the dimensions and margins of the graph
     var margin = {top: 10, right: 30, bottom: 40, left: 50},
         width = window.innerWidth/3 - margin.left - margin.right,
@@ -24,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .style("fill", "snow")
 
     //Read the data
-    d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/iris.json", function(data) {
+    d3.json(`./apiGraph/${companyName}`, function(data) {
 
         // Add X axis
         var x = d3.scaleLinear()
@@ -52,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .attr("text-anchor", "end")
             .attr("x", width/2 + margin.left)
             .attr("y", height + margin.top + 20)
-            .text("Hours worked at internship");
+            .text("Months worked at internship");
 
         // Y axis label:
         svg.append("text")
@@ -64,8 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Color scale: give me a specie name, I return a color
         var color = d3.scaleOrdinal()
-            .domain(["accepted", "rejected", "pending" ])
-            .range([ "00FF00", "#FF0000", "#FFFF00"])
+            .domain(["accepted", "rejected"])
+            .range([ "00FF00", "#FF0000"])
 
         // Add dots
         svg.append('g')
@@ -74,9 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
             .enter()
             .append("circle")
             .attr("cx", function (d) { return x(d.GPA); } )
-            .attr("cy", function (d) { return y(d.College_Prestige); } )
+            .attr("cy", function (d) { return y(d.Months_interning); } )
             .attr("r", 5)
-            .style("fill", function (d) { return color(d.Species) } )
+            .style("fill", function (d) { return color(d.Response) } )
 
     });
 });
