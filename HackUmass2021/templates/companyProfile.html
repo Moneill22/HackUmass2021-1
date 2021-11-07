@@ -1,0 +1,26 @@
+{% extends 'template.html' %}
+
+{% load static %}
+
+{% block head %}
+    <link href="{% static 'results.css' %}" rel="stylesheet">
+    <link href="{% static 'profile.css' %}" rel="stylesheet">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <script src="{% static 'plot.js' %}"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+{% endblock %}
+{% block body %}
+    <div class="container">
+        <h1 class="greeting">Amazon</h1>
+        <div class="layout">
+            <div class="block A">
+                <h1>About us</h1>
+                <hr>
+                We are amazon, the company that revolutionized shopping by putting it on your phone. Join us! 
+            </div>
+            <div class="block B graph" style="padding: 50px 40px 30px 20px;">
+                <div id="plot"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
