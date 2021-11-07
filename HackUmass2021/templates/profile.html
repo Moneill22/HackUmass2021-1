@@ -1,0 +1,102 @@
+{% extends 'template.html' %}
+
+{% load static %}
+
+{% block head %}
+<link href="{% static 'results.css' %}" rel="stylesheet">
+<link href="{% static 'profile.css' %}" rel="stylesheet">
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        var edit = document.getElementsByClassName('edit');
+        var add = document.getElementsByClassName('edit')[1];
+        edit = document.getElementsByClassName('edit')[0];
+
+        var inputs = document.getElementsByClassName('about')[0].getElementsByTagName('input');
+        edit.addEventListener('click', () => {
+            edit.style.opacity = 0;
+            edit.style.cursor = 'default';
+            for(let i = 0; i < inputs.length; i++) {
+                if(i < inputs.length - 1) inputs[i].disabled = false;
+                else inputs[i].style.display = "block";
+            }
+        });
+
+        var form = document.getElementsByClassName('application')[0];
+        add.addEventListener('click', () => {
+            if(form.style.opacity === '0') {
+                form.style.height = "100px";
+                form.style.opacity = "100%";
+                form.nextSibling.nextSibling.style.display = "block";
+                add.style.transform = "rotate(45deg)";
+            console.log(form.style.opacity === '0');
+            } else {
+                form.style.height = 0;
+                form.style.opacity = 0;
+                add.style.transform = "";
+                form.nextSibling.nextSibling.style.display = "none";
+            }
+        });
+    });
+</script>
+{% endblock %}
+
+
+{% block body %}  
+<div class="container">
+    <h1 class="greeting">Hi Miguel</h1>
+    <div class="layout">
+        <div class="block A applications">
+            <h1>About me <i class="fa fa-pencil edit"></i></h1>
+            <hr>
+            <form method="POST" action="." class="about">
+                <label for="name">Name:</label>
+                <input id="name" type="text" value="Miguel" disabled>
+                <br>
+                <label for="education">Education:</label>
+                <input id="education" type="text" value="UMass Amherst" disabled>
+                <br>
+                <label for="gpa">GPA:</label>
+                <input id="gpa" min="0" max="4" step="0.01" type="number" value="3.91" disabled>
+                <br>
+                <label for="internship-months">Months Interning:</label>
+                <input id="internship-months" min="0" step="1" type="number" value="6" disabled>
+                <br>
+                <input class="save" type="submit" value="Save" style="display: none;">
+            </form>
+        </div>
+        <div class="block B suggestions">
+            <h1>My Applications <i class="fa fa-plus edit"></i></h1>
+            <hr>
+            <form  method="POST" action="." class="application" style="height: 0px; opacity: 0;">
+                <label for="name">Company Name:</label>
+                <input id="name" type="text">
+                <input class="save" type="submit" value="Save">
+            </form>
+            <hr style="display: none;">
+            <div class="job">
+                <h1 class="company">Amazon</h1>
+                <p class="title">Web Designer</p>
+                <img src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png">
+            </div>
+            <hr>
+            <div class="job">
+                <h1 class="company">Amazon</h1>
+                <p class="title">Web Designer</p>
+                <img src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png">
+            </div>
+            <hr>
+            <div class="job">
+                <h1 class="company">Amazon</h1>
+                <p class="title">Web Designer</p>
+                <img src="https://www.laurel-group.com/wp-content/uploads/amazon-logo-square.png">
+            </div>
+            <hr>
+            <div class="job etc">...</div>
+        </div>
+        <div class="block C search">
+            <h1>Find your next job: </h1>
+            <input type="text" class="searchbar">
+        </div>
+    </div>
+</div>
+{% endblock %}
