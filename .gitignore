@@ -4,3 +4,10 @@ venv/
 *.pyc
 __pycache__
 db.sqlite3
+HackUmass2021/companies/migrations/0001_initial.py
+HackUmass2021/companies/migrations/0002_auto_20211106_1715.py
+HackUmass2021/companies/migrations/0003_alter_graph_company_id.py
+HackUmass2021/Users/migrations/0001_initial.py
+.gitignore
+HackUmass2021/Users/migrations/0003_auto_20211106_2038.py
+HackUmass2021/Users/migrations/0002_auto_20211106_1715.py
