@@ -13,9 +13,9 @@
 </head>
 <body>
     <nav id="navbar">
-        <a href="#" class="logo">PATHWAYS</a>
+        <a href="{% url 'index' %}" class="logo">PATHWAYS</a>
         {% if user.is_authenticated %} 
-        <a href="#" class="nav-link">Home</a>
+        <a href="{% url 'index' %}" class="nav-link">Home</a>
         <a href="{% url 'logout' %}" class="nav-link">Logout</a>
         <input type="text" placeholder="Search for your next job" class="search"></input>
         {% else %}
