@@ -5,11 +5,6 @@ from Users.models import User
 import uuid
 
 # Create your models here.
-
-class UserGraphPoint(models.Model):
-    user = ForeignKey(User, on_delete=models.CASCADE)
-
-
 class Company(models.Model):
     # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     name = models.CharField(max_length=40, unique=True)
