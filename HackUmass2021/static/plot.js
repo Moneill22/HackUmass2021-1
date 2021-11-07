@@ -87,10 +87,10 @@ document.addEventListener("DOMContentLoaded", () => {
       .enter()
       .append("circle")
       .attr("cx", function (d) {
-        return x(d.GPA);
+        return x(d.Months_interning);
       })
       .attr("cy", function (d) {
-        return y(d.Months_interning);
+        return y(d.GPA);
       })
       .attr("r", 5)
       .style("fill", function (d) {
