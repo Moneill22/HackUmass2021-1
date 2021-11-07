@@ -14,7 +14,7 @@
 <body>
     <nav id="navbar">
         <a href="{% url 'index' %}" class="logo">PATHWAYS</a>
-        {% if user.is_authenticated %} 
+        {% if user.is_authenticated and user.username is not 'admin' %} 
         <a href="{% url 'index' %}" class="nav-link">Home</a>
         <a href="{% url 'logout' %}" class="nav-link">Logout</a>
         <input type="text" placeholder="Search for your next job" class="search"></input>
