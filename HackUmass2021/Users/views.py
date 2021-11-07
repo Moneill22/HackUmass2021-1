@@ -27,7 +27,7 @@ def App_creation_view(request):
 		try:
 			company = Company.objects.get(name=company_id) # throws error if it does not exist
 			user = User.objects.get(username=request.user.username)
-			app = Application(user=user, company_id=company_id, response = Response_Int(response))
+			app = Application(user=user, company_id=company_id, response = response)
 			app.save()
 			add_user_to_graph(request.user.username, company_id)
 		except:
@@ -58,15 +58,6 @@ def App_update_view(request):
 
 	return render(request, "app_create.html", context)
 
-def Response_Int(response):
-	if response == "":
-		return 0 #offer
-	elif response == "":
-		return 1 #Interview
-	elif response == "":
-		return 2 #ghosted
-	else:
-		return 3 #pending
 
 def create_user_profile(request):
 	if request.method == 'POST' and request.user != None:
