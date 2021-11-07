@@ -31,6 +31,7 @@ def company_profile_view(request, name):
 def d3_api_view(request, name):
     info = get_graph_info2(name)
     output = json.dumps(info)
+    print(output)
     return HttpResponse(output, content_type='application/json')
 
 #Helper Functions
@@ -64,13 +65,17 @@ def get_graph_info2(company_id):
     try: 
         graph = Graph.objects.get(company_id=company_id)
         users = graph.users.all()
+        # print(users)
         info = []
-        for user in users:
+        for user in users.iterator():
             print(user)
-            app = Application.objects.get(user=user)
+            app = Application.objects.filter(user=user)
+            if len(app) == 0:
+                continue
+            app = app[0]
             point = {
-                "GPA" : user.GPA,
-                "Months_interning" : user.MONTHS_INTERNING,
+                "GPA" : float(user.GPA),
+                "Months_interning" : float(user.MONTHS_INTERNING),
                 "Response" : app.response,
             }
             info.append(point)

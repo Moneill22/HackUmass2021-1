@@ -19,5 +19,5 @@ class Application(models.Model):
 	response = models.BooleanField(default = False)
 
 	def __str__(self) -> str:
-		return f'Application for {self.company_id}'
+		return f'Application for {self.user} at {self.company_id}'
 	
