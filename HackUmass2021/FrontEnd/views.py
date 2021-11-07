@@ -23,17 +23,9 @@ def dashboard(request, username):
     if len(User.objects.filter(username=username)) == 0:
         init_user_profile(username)
     profile = User.objects.filter(username=username)[0] # TODO bug?
-    applications = Application.objects.filter(user=profile)
-    
-    app_context = {}
-    # rec_context = {} # TODO add company recs
+    applications = Application.objects.filter(user=profile).all()
 
-    for app in applications:
-        # if len(app_context) == NUM_APPS:
-        #     break
-        app_context.update({app.company_id : app.response})
-
-    context = {'user' : profile, 'apps' : app_context} # TODO add company recs
+    context = {'user' : profile, 'apps' : applications} # TODO add company recs
     return render(request, 'profile.html', context)
 
 def update_dashboard(request, username):

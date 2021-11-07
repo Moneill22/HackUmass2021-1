@@ -1,8 +1,9 @@
-from django.http.response import HttpResponseRedirect
+from django.http.response import HttpResponse, HttpResponseRedirect
 from django.shortcuts import render
 from .forms import CompanyForm
 from Users.models import User, Application
 from .models import Company, Graph
+from django.utils import simplejson
 
 # Create your views here.
 def Company_create_view(request):
@@ -18,17 +19,19 @@ def Company_create_view(request):
 	}
     return render(request, "form/create.html", context)
 
-def company_profile_view(request, company_id):
+def company_profile_view(request, name):
     try:
-        company = Company.objects.get(name=company_id)
-        context = {}
-        context.update({'name': company.name})
-        context.update({'info': company.info})
-        context.update({'graph': get_graph_info(company.name)})
+        company = Company.objects.get(name=name)
+        context = {'name': company.name, 'info': company.info, 'graph': get_graph_info(company.name)}
 
-        return render(request, "Company.html", context)
+        return render(request, "companyProfile.html", context)
     except:
         return 0
+    
+def d3_api_view(request, name):
+    info = get_graph_info2(name)
+    output = simplejson.dumps(info)
+    return HttpResponse(output, content_type='application/json')
 
 #Helper Functions
 def add_user_to_graph(username, company_name):
@@ -51,6 +54,23 @@ def get_graph_info(company_id):
                 "status" : app.response,
                 "GPA" : user.GPA,
                 "Months_interning" : user.MONTHS_INTERNING 
+            }
+            info.append(point)
+        return info
+    except:
+        return 'Company or Application not found'
+
+def get_graph_info2(company_id):
+    try: 
+        graph = Graph.objects.get(company_id=company_id)
+        users = graph.users.all()
+        info = []
+        for user in users:
+            app = Application.objects.get(user=user)
+            point = {
+                "GPA" : user.GPA,
+                "Months_interning" : user.MONTHS_INTERNING,
+                "Response" : app.response,
             }
             info.append(point)
         return info
