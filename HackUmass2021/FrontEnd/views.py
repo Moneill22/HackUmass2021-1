@@ -7,7 +7,7 @@ from Users.views import init_user_profile, update_user_profile
 # Create your views here.
 
 def index(request):
-    if request.user != None and request.user.username != 'admin':
+    if request.user != None:
         return HttpResponseRedirect(f'dashboard/{request.user.username}')    
     return render(request, 'landing.html')
 
