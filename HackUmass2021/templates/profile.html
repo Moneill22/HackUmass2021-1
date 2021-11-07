@@ -22,7 +22,7 @@
     var form = document.getElementsByClassName("application")[0];
     add.addEventListener("click", () => {
       if (form.style.opacity === "0") {
-        form.style.height = "100px";
+        form.style.height = "";
         form.style.opacity = "100%";
         form.nextSibling.nextSibling.style.display = "block";
         add.style.transform = "rotate(45deg)";
@@ -98,6 +98,8 @@
       >
         <label for="name">Company Name:</label>
         <input name="name" id="name" type="text" />
+        <label for="name">Accepted?</label>
+        <input name="name" id="name" type="checkbox" />
         <input class="save" type="submit" value="Save" />
       </form>
       <hr style="display: none" />
