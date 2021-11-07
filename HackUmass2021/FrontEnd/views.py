@@ -6,15 +6,15 @@ from companies.models import Company
 # Create your views here.
 
 def index(request):
-    if request.user != None:
-        return HttpResponseRedirect(reversed("dashboard"))    
+    # if request.user != None:
+    #     return HttpResponseRedirect(reversed("dashboard"))    
     return render(request, 'landing.html')
 
-def signup(request):
-    return render(request, 'signup.html')
+# def signup(request):
+#     return render(request, 'signup.html')
 
-def signin(request):
-    return render(request, 'signin.html')
+# def signin(request):
+#     return render(request, 'signin.html')
 
 def account_page(request):
     pass
