@@ -35,7 +35,7 @@ def App_creation_view(request):
 		context = {
 			'user': User.objects.get(username=request.user.username),
 			'company_id': request.POST['company_id'],
-			'response': response)
+			'response': response
 		}
 
 	return render(request, "app_create.html", context)
