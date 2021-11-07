@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //Read the data
   d3.json(`../apiGraph/${companyName}`, function (data) {
     // Add X axis
-    var x = d3.scaleLinear().domain([0, 4]).range([0, width]);
+    var x = d3.scaleLinear().domain([0, 8]).range([0, width]);
     svg
       .append("g")
       .attr("transform", "translate(0," + height + ")")
