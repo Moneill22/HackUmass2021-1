@@ -8,7 +8,7 @@ class User(models.Model):
 	username = models.CharField(max_length=50)
 	GPA = models.DecimalField(decimal_places = 3, max_digits = 10)
 	MONTHS_INTERNING = models.IntegerField(default = 0)
-	college = models.CharField(blank = True, null = True)
+	college = models.CharField(max_length=50 ,blank = True, null = True)
 	
 	
 class Application(models.Model):

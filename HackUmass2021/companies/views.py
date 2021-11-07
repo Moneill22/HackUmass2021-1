@@ -41,7 +41,7 @@ def add_user_to_graph(username, company_name):
 
 def get_graph_info(company_id):
     try: 
-        graph = Graph.objects.get(id=company_id)
+        graph = Graph.objects.get(company_id=company_id)
         users = graph.users.all()
         info = []
         for user in users:

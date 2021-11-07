@@ -25,9 +25,10 @@ def App_creation_view(request):
 		company_id = request.POST['company_id']
 		response = request.POST['response']
 		try:
-			company = Company.objects.get(name=company_id)
+			company = Company.objects.get(name=company_id) # throws error if it does not exist
 			user = User.objects.get(username=request.user.username)
-			app = Application(user = user, company_id = company_id, response = Response_Int(response))
+			app = Application(user=user, company_id=company_id, response = Response_Int(response))
+			app.save()
 			add_user_to_graph(request.user.username, company_id)
 		except:
 			return 0
