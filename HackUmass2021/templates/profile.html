@@ -103,22 +103,22 @@
         <input class="save" type="submit" value="Save" />
       </form>
       <hr style="display: none" />
-      {% if apps %}
-      {% if apps[0] %}
+      {% if apps is not None %}
+      {% if apps[0] is not None %}
       <div class="job">
         <h1 class="company">{{ apps[0].company_id }}</h1>
         <p class="title">{{ apps[0].response }}</p>
       </div>
       <hr />
       {% endif %}
-      {% if apps[1] %}
+      {% if apps[1] is not None%}
       <div class="job">
         <h1 class="company">{{ apps[1].company_id }}</h1>
         <p class="title">{{ apps[1].response }}</p>
       </div>
       <hr />
       {% endif %}
-      {% if apps[2] %}
+      {% if apps[2] is not None%}
       <div class="job">
         <h1 class="company">{{ apps[2].company_id }}</h1>
         <p class="title">{{ apps[2].response }}</p>
